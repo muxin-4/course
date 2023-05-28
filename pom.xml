@@ -11,8 +11,12 @@
 	<groupId>com.course</groupId>
 	<artifactId>course</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>course</name>
 	<description>Demo project for Spring Boot</description>
+	<modules>
+		<module>eureka</module>
+	</modules>
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.7</spring-cloud.version>
