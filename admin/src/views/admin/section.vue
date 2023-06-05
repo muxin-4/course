@@ -173,9 +173,9 @@
       _this.$refs.pagination.size = 5;
       let course = SessionStorage.get(SESSION_KEY_COURSE) || {};
       let chapter = SessionStorage.get(SESSION_KEY_CHAPTER) || {};
-      if (Tool.isEmpty(course) || Tool.isEmpty(chapter)) {
-        _this.$router.push("/welcome");
-      }
+      // if (Tool.isEmpty(course) || Tool.isEmpty(chapter)) {
+      //   _this.$router.push("/welcome");
+      // }
       _this.course = course;
       _this.chapter = chapter;
       _this.list(1);

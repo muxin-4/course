@@ -103,9 +103,9 @@
       let _this = this;
       _this.$refs.pagination.size = 5;
       let course = SessionStorage.get(SESSION_KEY_COURSE) || {};
-      if (Tool.isEmpty(course)) {
-        _this.$router.push("/welcome");
-      }
+      // if (Tool.isEmpty(course)) {
+      //   _this.$router.push("/welcome");
+      // }
       _this.course = course;
       _this.list(1);
       // sidebar激活样式方法一
