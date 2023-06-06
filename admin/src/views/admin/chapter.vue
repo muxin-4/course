@@ -186,9 +186,8 @@ export default {
           let resp = response.data;
           console.log("htmlchapters", response);
 
-          // _this.chapters = resp.content.list;
-          _this.chapters = resp;
-          _this.$refs.pagination.render(page, 2);
+          _this.chapters = resp.list;
+          _this.$refs.pagination.render(page, resp.total);
         });
     },
 
