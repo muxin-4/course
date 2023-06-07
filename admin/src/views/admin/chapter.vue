@@ -175,8 +175,7 @@ export default {
       let _this = this;
       Loading.show();
       _this.$ajax
-        // .post(process.env.VUE_APP_SERVER + "/business/admin/chapter/list", {
-        .post("http://127.0.0.1:9000" + "/business/admin/chapter/list", {
+        .post(process.env.VUE_APP_SERVER + "/business/admin/chapter/list", {
           page: page,
           size: _this.$refs.pagination.size,
           courseId: _this.course.id,

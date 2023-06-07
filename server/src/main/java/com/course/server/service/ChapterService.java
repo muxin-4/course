@@ -6,6 +6,7 @@ import com.course.server.domain.ChapterExample;
 import com.course.server.dto.ChapterDto;
 import com.course.server.dto.PageDto;
 import com.course.server.mapper.ChapterMapper;
+import com.course.server.util.UuidUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
@@ -28,7 +29,7 @@ public class ChapterService {
         PageInfo<Chapter> pageInfo = new PageInfo<>(chapterList);
         pageDto.setTotal(pageInfo.getTotal());
         List<ChapterDto> chapterDtoList = new ArrayList<ChapterDto>();
-        for (int i = 0, l = chapterList.size(); i < 1; i++) {
+        for (int i = 0, l = chapterList.size(); i < l; i++) {
             Chapter chapter = chapterList.get(i);
             ChapterDto chapterDto = new ChapterDto();
             BeanUtils.copyProperties(chapter, chapterDto);
@@ -36,5 +37,12 @@ public class ChapterService {
         }
 
         pageDto.setList(chapterDtoList);
+    }
+
+    public void save(ChapterDto chapterDto) {
+        chapterDto.setId(UuidUtil.getShortUuid());
+        Chapter chapter = new Chapter();
+        BeanUtils.copyProperties(chapterDto, chapter);
+        chapterMapper.insert(chapter);
     }
 }
