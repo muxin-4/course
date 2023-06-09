@@ -32,6 +32,17 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!-- AOP -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
         <!-- mybatis分页插件pagehelper -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
