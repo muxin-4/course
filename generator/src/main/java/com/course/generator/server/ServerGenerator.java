@@ -8,15 +8,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServerGenerator {
+    static String MODULE = "business";
     static String toServicePath = "server/src/main/java/com/course/server/service/";
-    static String toControllerPath = "business/src/main/java/com/course/business/controller/admin/";
+    static String toControllerPath = MODULE + "/src/main/java/com/course/" + MODULE + "/controller/admin/";
 
     public static void main(String[] args) throws TemplateException, IOException {
         String Domain = "Section";
         String domain = "section";
+        String tableNameCn = "小节";
+        String module = MODULE;
         Map<String, Object> map = new HashMap<>();
         map.put("Domain", Domain);
         map.put("domain", domain);
+        map.put("tableNameCn", tableNameCn);
+        map.put("module", module);
 
         // 生成service
         FreeMarkerUtil.initConfig("service.ftl");
