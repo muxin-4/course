@@ -11,7 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class FreeMarkerUtil {
+public class FreemarkerUtil {
 
     static String ftlPath = "generator/src/main/java/com/course/generator/ftl/";
     static Template temp;
