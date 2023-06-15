@@ -1,10 +1,8 @@
 package com.course.business.controller.admin;
 
-import com.course.server.domain.Course;
 import com.course.server.dto.CourseDto;
 import com.course.server.dto.PageDto;
 import com.course.server.dto.ResponseDto;
-import com.course.server.exception.ValidatorException;
 import com.course.server.service.CourseService;
 import com.course.server.util.ValidatorUtil;
 import org.slf4j.Logger;
@@ -12,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @RestController
 @RequestMapping("/admin/course")
@@ -47,7 +44,6 @@ public class CourseController {
         LOG.info("courseDto:{}", courseDto);
 
         // 保存校验
-                ValidatorUtil.require(courseDto.getId(), "id");
                 ValidatorUtil.require(courseDto.getName(), "名称");
                 ValidatorUtil.length(courseDto.getName(), "名称", 1, 50);
                 ValidatorUtil.length(courseDto.getSummary(), "概述", 1, 2000);

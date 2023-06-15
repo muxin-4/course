@@ -13,8 +13,8 @@
     <result column="status" jdbcType="CHAR" property="status" />
     <result column="enroll" jdbcType="INTEGER" property="enroll" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
-    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
-    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -76,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, `name`, summary, `time`, price, image, `level`, charge, `status`, enroll, sort, 
-    create_at, update_at
+    created_at, updated_at
   </sql>
   <select id="selectByExample" parameterType="com.course.server.domain.CourseExample" resultMap="BaseResultMap">
     select
@@ -112,12 +112,12 @@
     insert into course (id, `name`, summary, 
       `time`, price, image, 
       `level`, charge, `status`, enroll, 
-      sort, create_at, update_at
+      sort, created_at, updated_at
       )
     values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
       #{time,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{image,jdbcType=VARCHAR}, 
       #{level,jdbcType=CHAR}, #{charge,jdbcType=CHAR}, #{status,jdbcType=CHAR}, #{enroll,jdbcType=INTEGER}, 
-      #{sort,jdbcType=INTEGER}, #{createAt,jdbcType=TIMESTAMP}, #{updateAt,jdbcType=TIMESTAMP}
+      #{sort,jdbcType=INTEGER}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.course.server.domain.Course">
@@ -156,11 +156,11 @@
       <if test="sort != null">
         sort,
       </if>
-      <if test="createAt != null">
-        create_at,
+      <if test="createdAt != null">
+        created_at,
       </if>
-      <if test="updateAt != null">
-        update_at,
+      <if test="updatedAt != null">
+        updated_at,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -197,11 +197,11 @@
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
       </if>
-      <if test="createAt != null">
-        #{createAt,jdbcType=TIMESTAMP},
+      <if test="createdAt != null">
+        #{createdAt,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateAt != null">
-        #{updateAt,jdbcType=TIMESTAMP},
+      <if test="updatedAt != null">
+        #{updatedAt,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -247,11 +247,11 @@
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=INTEGER},
       </if>
-      <if test="record.createAt != null">
-        create_at = #{record.createAt,jdbcType=TIMESTAMP},
+      <if test="record.createdAt != null">
+        created_at = #{record.createdAt,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.updateAt != null">
-        update_at = #{record.updateAt,jdbcType=TIMESTAMP},
+      <if test="record.updatedAt != null">
+        updated_at = #{record.updatedAt,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -271,8 +271,8 @@
       `status` = #{record.status,jdbcType=CHAR},
       enroll = #{record.enroll,jdbcType=INTEGER},
       sort = #{record.sort,jdbcType=INTEGER},
-      create_at = #{record.createAt,jdbcType=TIMESTAMP},
-      update_at = #{record.updateAt,jdbcType=TIMESTAMP}
+      created_at = #{record.createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{record.updatedAt,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -310,11 +310,11 @@
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
       </if>
-      <if test="createAt != null">
-        create_at = #{createAt,jdbcType=TIMESTAMP},
+      <if test="createdAt != null">
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateAt != null">
-        update_at = #{updateAt,jdbcType=TIMESTAMP},
+      <if test="updatedAt != null">
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=CHAR}
@@ -331,8 +331,8 @@
       `status` = #{status,jdbcType=CHAR},
       enroll = #{enroll,jdbcType=INTEGER},
       sort = #{sort,jdbcType=INTEGER},
-      create_at = #{createAt,jdbcType=TIMESTAMP},
-      update_at = #{updateAt,jdbcType=TIMESTAMP}
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=CHAR}
   </update>
 </mapper>

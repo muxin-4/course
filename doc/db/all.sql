@@ -43,13 +43,13 @@ CREATE TABLE `section` (
     `time` INT COMMENT '时长|单位秒',
     `charge` CHAR(1) COMMENT '收费|C 收费; F 免费',
     `sort` INT COMMENT '顺序',
-    `create_at` DATETIME(3) COMMENT '创建时间',
-    `update_at` DATETIME(3) COMMENT  '修改时间',
+    `created_at` DATETIME(3) COMMENT '创建时间',
+    `updated_at` DATETIME(3) COMMENT  '修改时间',
     PRIMARY KEY (`ID`)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='小节';
 
-INSERT INTO `section` (id, title, course_id, chapter_id, video, time, charge, sort, create_at, update_at)
+INSERT INTO `section` (id, title, course_id, chapter_id, video, time, charge, sort, created_at, updated_at)
 VALUES ('00000001', '测试小节1', '00000001', '00000000', '', 500, 'F', 1, now(), now());
 
 # 课程
@@ -66,12 +66,12 @@ create table course(
     status char(1) comment '状态|PUBLISH("P", "发布"),DRAFT("D","草稿")',
     enroll integer default 0 comment '报名数',
     sort int comment '顺序',
-    create_at datetime(3) comment '创建时间',
-    update_at datetime(3) comment '修改时间',
+    created_at datetime(3) comment '创建时间',
+    updated_at datetime(3) comment '修改时间',
     primary key (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='课程表';
 
-insert into course(id, name, summary, time, price, image, level, charge, status, enroll, sort, create_at, update_at)
+insert into course(id, name, summary, time, price, image, level, charge, status, enroll, sort, created_at, updated_at)
 values ('00000001', '测试课程01', '这是一门测试课程', 7200, 19.9, '', 0, 'C', 'D', 100, 0, now(), now());
 
 

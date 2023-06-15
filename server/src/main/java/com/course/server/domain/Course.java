@@ -26,9 +26,9 @@ public class Course {
 
     private Integer sort;
 
-    private Date createAt;
+    private Date createdAt;
 
-    private Date updateAt;
+    private Date updatedAt;
 
     public String getId() {
         return id;
@@ -118,20 +118,20 @@ public class Course {
         this.sort = sort;
     }
 
-    public Date getCreateAt() {
-        return createAt;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Date getUpdateAt() {
-        return updateAt;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -151,8 +151,8 @@ public class Course {
         sb.append(", status=").append(status);
         sb.append(", enroll=").append(enroll);
         sb.append(", sort=").append(sort);
-        sb.append(", createAt=").append(createAt);
-        sb.append(", updateAt=").append(updateAt);
+        sb.append(", createdAt=").append(createdAt);
+        sb.append(", updatedAt=").append(updatedAt);
         sb.append("]");
         return sb.toString();
     }
