@@ -365,7 +365,7 @@ export default {
       _this.course = {
         sort: _this.$refs.pagination.total + 1,
       };
-      _this.tree.checkAllNodes(false);
+      // _this.tree.checkAllNodes(false);
       $("#form-modal").modal("show");
     },
 
