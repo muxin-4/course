@@ -22,6 +22,7 @@ public class CourseController {
 
     /**
      * 列表查询
+     *
      * @param pageDto
      * @return
      */
@@ -36,6 +37,7 @@ public class CourseController {
 
     /**
      * 保存，id有值时更新，无值时新增
+     *
      * @param courseDto
      * @return
      */
@@ -44,12 +46,12 @@ public class CourseController {
         LOG.info("courseDto:{}", courseDto);
 
         // 保存校验
-                ValidatorUtil.require(courseDto.getName(), "名称");
-                ValidatorUtil.length(courseDto.getName(), "名称", 1, 50);
-                ValidatorUtil.length(courseDto.getSummary(), "概述", 1, 2000);
-                ValidatorUtil.require(courseDto.getPrice(), "价格（元）");
-                ValidatorUtil.length(courseDto.getImage(), "封面", 1, 100);
-                ValidatorUtil.require(courseDto.getLevel(), "级别");
+        ValidatorUtil.require(courseDto.getName(), "名称");
+        ValidatorUtil.length(courseDto.getName(), "名称", 1, 50);
+        ValidatorUtil.length(courseDto.getSummary(), "概述", 1, 2000);
+        ValidatorUtil.require(courseDto.getPrice(), "价格（元）");
+        ValidatorUtil.length(courseDto.getImage(), "封面", 1, 100);
+        ValidatorUtil.require(courseDto.getLevel(), "级别");
 
         ResponseDto responseDto = new ResponseDto();
         courseService.save(courseDto);
@@ -59,6 +61,7 @@ public class CourseController {
 
     /**
      * 删除
+     *
      * @param id
      * @return
      */
