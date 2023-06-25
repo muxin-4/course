@@ -75,6 +75,12 @@ public class CourseDto {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date updatedAt;
 
+    private List<CategoryDto> categorys;
+
+    public String getTeacherId() {
+        return teacherId;
+    }
+
     @Override
     public String toString() {
         return "CourseDto{" +
@@ -92,10 +98,15 @@ public class CourseDto {
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 ", categorys=" + categorys +
+                ", teacherId='" + teacherId + '\'' +
                 '}';
     }
 
-    private List<CategoryDto> categorys;
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    private String teacherId;
 
     public List<CategoryDto> getCategorys() {
         return categorys;

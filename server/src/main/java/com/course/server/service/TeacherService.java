@@ -23,6 +23,16 @@ public class TeacherService {
 
     /**
      * 列表查询
+     */
+    public List<TeacherDto> all() {
+        TeacherExample teacherExample = new TeacherExample();
+        List<Teacher> teacherList = teacherMapper.selectByExample(teacherExample);
+        return CopyUtil.copyList(teacherList, TeacherDto.class);
+    }
+
+    /**
+     * 列表查询
+     *
      * @param pageDto
      */
     public void list(PageDto pageDto) {
@@ -37,21 +47,23 @@ public class TeacherService {
 
     /**
      * 保存，id有值时更新，无值时新增
+     *
      * @param teacherDto
      * @return
      */
     public void save(TeacherDto teacherDto) {
         Teacher teacher = CopyUtil.copy(teacherDto, Teacher.class);
 
-        if(StringUtils.isEmpty(teacherDto.getId())) {
+        if (StringUtils.isEmpty(teacherDto.getId())) {
             this.insert(teacher);
-        }else {
+        } else {
             this.update(teacher);
         }
     }
 
     /**
      * 新增
+     *
      * @param teacher
      */
     private void insert(Teacher teacher) {
@@ -61,6 +73,7 @@ public class TeacherService {
 
     /**
      * 更新
+     *
      * @param teacher
      */
     private void update(Teacher teacher) {
@@ -69,6 +82,7 @@ public class TeacherService {
 
     /**
      * 删除
+     *
      * @param id
      */
     public void delete(String id) {
