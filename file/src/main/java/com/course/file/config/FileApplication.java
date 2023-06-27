@@ -16,6 +16,8 @@ import org.springframework.core.env.Environment;
 public class FileApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(FileApplication.class);
+
+    public static final String BUSINESS_NAME = "文件上传";
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(FileApplication.class);
         Environment env = app.run(args).getEnvironment();
