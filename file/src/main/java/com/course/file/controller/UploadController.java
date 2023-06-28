@@ -32,12 +32,13 @@ public class UploadController {
         // 保存文件到本地
         String fileName = file.getOriginalFilename();
         String key = UuidUtil.getShortUuid();
-        String fullPath = "/Users/wangguanyu/wgy/09_github/courseFile/teacher" + key + "-" + fileName;
+        String fullPath = "/Users/wangguanyu/wgy/09_github/courseFile/course/teacher" + key + "-" + fileName;
         File dest = new File(fullPath);
         file.transferTo(dest);
         LOG.info(dest.getAbsolutePath());
 
         ResponseDto responseDto = new ResponseDto();
+        responseDto.setContent("http://127.0.0.1/file/f/teacher" + key + "-" + fileName);
         return responseDto;
     }
 }
