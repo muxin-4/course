@@ -43,7 +43,7 @@ public class ${Domain}Controller {
      * @return
      */
     @PostMapping("/save")
-    public ResponseDto list(@RequestBody ${Domain}Dto ${domain}Dto) {
+    public ResponseDto save(@RequestBody ${Domain}Dto ${domain}Dto) {
         LOG.info("${domain}Dto:{}", ${domain}Dto);
 
         // 保存校验
@@ -70,7 +70,7 @@ public class ${Domain}Controller {
      * @return
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseDto list(@PathVariable String id) {
+    public ResponseDto delete(@PathVariable String id) {
         LOG.info("id:{}", id);
         ResponseDto responseDto = new ResponseDto();
         ${domain}Service.delete(id);

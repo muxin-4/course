@@ -41,7 +41,7 @@ public class ChapterController {
      * @return
      */
     @PostMapping("/save")
-    public ResponseDto list(@RequestBody ChapterDto chapterDto) {
+    public ResponseDto save(@RequestBody ChapterDto chapterDto) {
         LOG.info("chapterDto:{}", chapterDto);
 
         // 保存校验
@@ -62,7 +62,7 @@ public class ChapterController {
      * @return
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseDto list(@PathVariable String id) {
+    public ResponseDto delete(@PathVariable String id) {
         LOG.info("id:{}", id);
         ResponseDto responseDto = new ResponseDto();
         chapterService.delete(id);

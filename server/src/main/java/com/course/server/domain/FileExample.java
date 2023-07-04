@@ -634,6 +634,256 @@ public class FileExample {
             addCriterion("update_at not between", value1, value2, "updateAt");
             return (Criteria) this;
         }
+
+        public Criteria andShareIndexIsNull() {
+            addCriterion("share_index is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexIsNotNull() {
+            addCriterion("share_index is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexEqualTo(Integer value) {
+            addCriterion("share_index =", value, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexNotEqualTo(Integer value) {
+            addCriterion("share_index <>", value, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexGreaterThan(Integer value) {
+            addCriterion("share_index >", value, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexGreaterThanOrEqualTo(Integer value) {
+            addCriterion("share_index >=", value, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexLessThan(Integer value) {
+            addCriterion("share_index <", value, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexLessThanOrEqualTo(Integer value) {
+            addCriterion("share_index <=", value, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexIn(List<Integer> values) {
+            addCriterion("share_index in", values, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexNotIn(List<Integer> values) {
+            addCriterion("share_index not in", values, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexBetween(Integer value1, Integer value2) {
+            addCriterion("share_index between", value1, value2, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareIndexNotBetween(Integer value1, Integer value2) {
+            addCriterion("share_index not between", value1, value2, "shareIndex");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeIsNull() {
+            addCriterion("share_size is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeIsNotNull() {
+            addCriterion("share_size is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeEqualTo(Integer value) {
+            addCriterion("share_size =", value, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeNotEqualTo(Integer value) {
+            addCriterion("share_size <>", value, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeGreaterThan(Integer value) {
+            addCriterion("share_size >", value, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("share_size >=", value, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeLessThan(Integer value) {
+            addCriterion("share_size <", value, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeLessThanOrEqualTo(Integer value) {
+            addCriterion("share_size <=", value, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeIn(List<Integer> values) {
+            addCriterion("share_size in", values, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeNotIn(List<Integer> values) {
+            addCriterion("share_size not in", values, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeBetween(Integer value1, Integer value2) {
+            addCriterion("share_size between", value1, value2, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareSizeNotBetween(Integer value1, Integer value2) {
+            addCriterion("share_size not between", value1, value2, "shareSize");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalIsNull() {
+            addCriterion("share_total is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalIsNotNull() {
+            addCriterion("share_total is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalEqualTo(Integer value) {
+            addCriterion("share_total =", value, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalNotEqualTo(Integer value) {
+            addCriterion("share_total <>", value, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalGreaterThan(Integer value) {
+            addCriterion("share_total >", value, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalGreaterThanOrEqualTo(Integer value) {
+            addCriterion("share_total >=", value, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalLessThan(Integer value) {
+            addCriterion("share_total <", value, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalLessThanOrEqualTo(Integer value) {
+            addCriterion("share_total <=", value, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalIn(List<Integer> values) {
+            addCriterion("share_total in", values, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalNotIn(List<Integer> values) {
+            addCriterion("share_total not in", values, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalBetween(Integer value1, Integer value2) {
+            addCriterion("share_total between", value1, value2, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andShareTotalNotBetween(Integer value1, Integer value2) {
+            addCriterion("share_total not between", value1, value2, "shareTotal");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyIsNull() {
+            addCriterion("`key` is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyIsNotNull() {
+            addCriterion("`key` is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyEqualTo(String value) {
+            addCriterion("`key` =", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyNotEqualTo(String value) {
+            addCriterion("`key` <>", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyGreaterThan(String value) {
+            addCriterion("`key` >", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyGreaterThanOrEqualTo(String value) {
+            addCriterion("`key` >=", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyLessThan(String value) {
+            addCriterion("`key` <", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyLessThanOrEqualTo(String value) {
+            addCriterion("`key` <=", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyLike(String value) {
+            addCriterion("`key` like", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyNotLike(String value) {
+            addCriterion("`key` not like", value, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyIn(List<String> values) {
+            addCriterion("`key` in", values, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyNotIn(List<String> values) {
+            addCriterion("`key` not in", values, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyBetween(String value1, String value2) {
+            addCriterion("`key` between", value1, value2, "key");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeyNotBetween(String value1, String value2) {
+            addCriterion("`key` not between", value1, value2, "key");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

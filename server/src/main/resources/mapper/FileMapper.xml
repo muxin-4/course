@@ -10,6 +10,10 @@
     <result column="use" jdbcType="CHAR" property="use" />
     <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
     <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="share_index" jdbcType="INTEGER" property="shareIndex" />
+    <result column="share_size" jdbcType="INTEGER" property="shareSize" />
+    <result column="share_total" jdbcType="INTEGER" property="shareTotal" />
+    <result column="key" jdbcType="VARCHAR" property="key" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,7 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, `path`, `name`, suffix, `size`, `use`, create_at, update_at
+    id, `path`, `name`, suffix, `size`, `use`, create_at, update_at, share_index, share_size, 
+    share_total, `key`
   </sql>
   <select id="selectByExample" parameterType="com.course.server.domain.FileExample" resultMap="BaseResultMap">
     select
@@ -105,10 +110,12 @@
   <insert id="insert" parameterType="com.course.server.domain.File">
     insert into file (id, `path`, `name`, 
       suffix, `size`, `use`, create_at, 
-      update_at)
+      update_at, share_index, share_size, 
+      share_total, `key`)
     values (#{id,jdbcType=CHAR}, #{path,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{suffix,jdbcType=VARCHAR}, #{size,jdbcType=INTEGER}, #{use,jdbcType=CHAR}, #{createAt,jdbcType=TIMESTAMP}, 
-      #{updateAt,jdbcType=TIMESTAMP})
+      #{updateAt,jdbcType=TIMESTAMP}, #{shareIndex,jdbcType=INTEGER}, #{shareSize,jdbcType=INTEGER}, 
+      #{shareTotal,jdbcType=INTEGER}, #{key,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.course.server.domain.File">
     insert into file
@@ -137,6 +144,18 @@
       <if test="updateAt != null">
         update_at,
       </if>
+      <if test="shareIndex != null">
+        share_index,
+      </if>
+      <if test="shareSize != null">
+        share_size,
+      </if>
+      <if test="shareTotal != null">
+        share_total,
+      </if>
+      <if test="key != null">
+        `key`,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -162,6 +181,18 @@
       </if>
       <if test="updateAt != null">
         #{updateAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shareIndex != null">
+        #{shareIndex,jdbcType=INTEGER},
+      </if>
+      <if test="shareSize != null">
+        #{shareSize,jdbcType=INTEGER},
+      </if>
+      <if test="shareTotal != null">
+        #{shareTotal,jdbcType=INTEGER},
+      </if>
+      <if test="key != null">
+        #{key,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -198,6 +229,18 @@
       <if test="record.updateAt != null">
         update_at = #{record.updateAt,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.shareIndex != null">
+        share_index = #{record.shareIndex,jdbcType=INTEGER},
+      </if>
+      <if test="record.shareSize != null">
+        share_size = #{record.shareSize,jdbcType=INTEGER},
+      </if>
+      <if test="record.shareTotal != null">
+        share_total = #{record.shareTotal,jdbcType=INTEGER},
+      </if>
+      <if test="record.key != null">
+        `key` = #{record.key,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -212,7 +255,11 @@
       `size` = #{record.size,jdbcType=INTEGER},
       `use` = #{record.use,jdbcType=CHAR},
       create_at = #{record.createAt,jdbcType=TIMESTAMP},
-      update_at = #{record.updateAt,jdbcType=TIMESTAMP}
+      update_at = #{record.updateAt,jdbcType=TIMESTAMP},
+      share_index = #{record.shareIndex,jdbcType=INTEGER},
+      share_size = #{record.shareSize,jdbcType=INTEGER},
+      share_total = #{record.shareTotal,jdbcType=INTEGER},
+      `key` = #{record.key,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -241,6 +288,18 @@
       <if test="updateAt != null">
         update_at = #{updateAt,jdbcType=TIMESTAMP},
       </if>
+      <if test="shareIndex != null">
+        share_index = #{shareIndex,jdbcType=INTEGER},
+      </if>
+      <if test="shareSize != null">
+        share_size = #{shareSize,jdbcType=INTEGER},
+      </if>
+      <if test="shareTotal != null">
+        share_total = #{shareTotal,jdbcType=INTEGER},
+      </if>
+      <if test="key != null">
+        `key` = #{key,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
@@ -252,7 +311,11 @@
       `size` = #{size,jdbcType=INTEGER},
       `use` = #{use,jdbcType=CHAR},
       create_at = #{createAt,jdbcType=TIMESTAMP},
-      update_at = #{updateAt,jdbcType=TIMESTAMP}
+      update_at = #{updateAt,jdbcType=TIMESTAMP},
+      share_index = #{shareIndex,jdbcType=INTEGER},
+      share_size = #{shareSize,jdbcType=INTEGER},
+      share_total = #{shareTotal,jdbcType=INTEGER},
+      `key` = #{key,jdbcType=VARCHAR}
     where id = #{id,jdbcType=CHAR}
   </update>
 </mapper>

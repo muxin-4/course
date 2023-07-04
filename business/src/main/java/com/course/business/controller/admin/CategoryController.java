@@ -23,6 +23,7 @@ public class CategoryController {
 
     /**
      * 列表查询
+     *
      * @return
      */
     @PostMapping("/all")
@@ -35,6 +36,7 @@ public class CategoryController {
 
     /**
      * 列表查询
+     *
      * @param pageDto
      * @return
      */
@@ -49,17 +51,18 @@ public class CategoryController {
 
     /**
      * 保存，id有值时更新，无值时新增
+     *
      * @param categoryDto
      * @return
      */
     @PostMapping("/save")
-    public ResponseDto list(@RequestBody CategoryDto categoryDto) {
+    public ResponseDto save(@RequestBody CategoryDto categoryDto) {
         LOG.info("categoryDto:{}", categoryDto);
 
         // 保存校验
-                ValidatorUtil.require(categoryDto.getParent(), "父id");
-                ValidatorUtil.require(categoryDto.getName(), "名称");
-                ValidatorUtil.length(categoryDto.getName(), "名称", 1, 50);
+        ValidatorUtil.require(categoryDto.getParent(), "父id");
+        ValidatorUtil.require(categoryDto.getName(), "名称");
+        ValidatorUtil.length(categoryDto.getName(), "名称", 1, 50);
 
         ResponseDto responseDto = new ResponseDto();
         categoryService.save(categoryDto);
@@ -69,11 +72,12 @@ public class CategoryController {
 
     /**
      * 删除
+     *
      * @param id
      * @return
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseDto list(@PathVariable String id) {
+    public ResponseDto delete(@PathVariable String id) {
         LOG.info("id:{}", id);
         ResponseDto responseDto = new ResponseDto();
         categoryService.delete(id);

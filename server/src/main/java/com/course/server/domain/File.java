@@ -19,6 +19,14 @@ public class File {
 
     private Date updateAt;
 
+    private Integer shareIndex;
+
+    private Integer shareSize;
+
+    private Integer shareTotal;
+
+    private String key;
+
     public String getId() {
         return id;
     }
@@ -83,6 +91,38 @@ public class File {
         this.updateAt = updateAt;
     }
 
+    public Integer getShareIndex() {
+        return shareIndex;
+    }
+
+    public void setShareIndex(Integer shareIndex) {
+        this.shareIndex = shareIndex;
+    }
+
+    public Integer getShareSize() {
+        return shareSize;
+    }
+
+    public void setShareSize(Integer shareSize) {
+        this.shareSize = shareSize;
+    }
+
+    public Integer getShareTotal() {
+        return shareTotal;
+    }
+
+    public void setShareTotal(Integer shareTotal) {
+        this.shareTotal = shareTotal;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -97,6 +137,10 @@ public class File {
         sb.append(", use=").append(use);
         sb.append(", createAt=").append(createAt);
         sb.append(", updateAt=").append(updateAt);
+        sb.append(", shareIndex=").append(shareIndex);
+        sb.append(", shareSize=").append(shareSize);
+        sb.append(", shareTotal=").append(shareTotal);
+        sb.append(", key=").append(key);
         sb.append("]");
         return sb.toString();
     }

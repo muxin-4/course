@@ -44,7 +44,7 @@ public class SectionController {
      * @return
      */
     @PostMapping("/save")
-    public ResponseDto list(@RequestBody SectionDto sectionDto) {
+    public ResponseDto save(@RequestBody SectionDto sectionDto) {
         LOG.info("sectionDto:{}", sectionDto);
 
         // 保存校验
@@ -65,7 +65,7 @@ public class SectionController {
      * @return
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseDto list(@PathVariable String id) {
+    public ResponseDto delete(@PathVariable String id) {
         LOG.info("id:{}", id);
         ResponseDto responseDto = new ResponseDto();
         sectionService.delete(id);

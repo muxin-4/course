@@ -45,7 +45,7 @@ public class CourseController {
      * @return
      */
     @PostMapping("/save")
-    public ResponseDto list(@RequestBody CourseDto courseDto) {
+    public ResponseDto save(@RequestBody CourseDto courseDto) {
         LOG.info("courseDto:{}", courseDto);
 
         // 保存校验
@@ -69,7 +69,7 @@ public class CourseController {
      * @return
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseDto list(@PathVariable String id) {
+    public ResponseDto delete(@PathVariable String id) {
         LOG.info("id:{}", id);
         ResponseDto responseDto = new ResponseDto();
         courseService.delete(id);

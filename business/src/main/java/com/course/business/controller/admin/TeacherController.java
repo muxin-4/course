@@ -55,7 +55,7 @@ public class TeacherController {
      * @return
      */
     @PostMapping("/save")
-    public ResponseDto list(@RequestBody TeacherDto teacherDto) {
+    public ResponseDto save(@RequestBody TeacherDto teacherDto) {
         LOG.info("teacherDto:{}", teacherDto);
 
         // 保存校验
@@ -80,7 +80,7 @@ public class TeacherController {
      * @return
      */
     @DeleteMapping("/delete/{id}")
-    public ResponseDto list(@PathVariable String id) {
+    public ResponseDto delete(@PathVariable String id) {
         LOG.info("id:{}", id);
         ResponseDto responseDto = new ResponseDto();
         teacherService.delete(id);
